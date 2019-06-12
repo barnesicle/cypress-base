@@ -1,10 +1,10 @@
-FROM cypress/base:ubuntu16
+FROM $CYPRESS_IMAGE
 MAINTAINER  Luke Barnes
 
 ENV APP_HOME=/usr/app
 WORKDIR $APP_HOME
 
-RUN npm install cypress@3.1.5
+RUN npm install $CYPRESS_VERSION
 
 ENV CYPRESS_DIR=$APP_HOME/node_modules/.bin
 
